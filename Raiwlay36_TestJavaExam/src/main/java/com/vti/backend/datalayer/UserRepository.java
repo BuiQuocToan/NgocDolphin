@@ -41,7 +41,7 @@ public class UserRepository implements IUserRepository {
 				String ProSkill = resultSet.getString("ProSkill");
 				Role role;
 				role = Role.EMPLOYEE;
-				Employee employee = new Employee(ID, Fullname, Email, PassWord, ProjectId, ProSkill, role);
+				Employee employee = new Employee(ID, Fullname, Email, PassWord, ProjectId, ProSkill);
 				employees.add(employee);
 			}
 			return employees;
@@ -69,7 +69,7 @@ public class UserRepository implements IUserRepository {
 				int expInYear = resultSet.getInt("expInYear");
 				Role role;
 				role = Role.MANAGER;
-				Manager manager = new Manager(ID, Fullname, Email, PassWord, ProjectId, expInYear, role);
+				Manager manager = new Manager(ID, Fullname, Email, PassWord, ProjectId, expInYear);
 				managers.add(manager);
 			}
 			return managers;
@@ -93,9 +93,7 @@ public class UserRepository implements IUserRepository {
 				String PassWord = resultSet.getString("Password");
 				int ProjectId = resultSet.getInt("ProjectId");
 				int expInYear = resultSet.getInt("expInYear");
-				Role role;
-				role = Role.MANAGER;
-				Manager manager = new Manager(ID, Fullname, Email, PassWord, ProjectId, expInYear, role);
+				Manager manager = new Manager(ID, Fullname, Email, PassWord, ProjectId, expInYear);
 				managers.add(manager);
 			}
 			return managers;
@@ -123,10 +121,10 @@ public class UserRepository implements IUserRepository {
 				int expInYear = resultSet.getInt("expInYear");
 				String ProSkill = resultSet.getString("ProSkill");
 				if (resultSet.getString("Role").equals("Manager")) {
-					User manager = new Manager(ID, Fullname, Email, PassWord, ProjectId, expInYear, Role.MANAGER);
+					User manager = new Manager(ID, Fullname, Email, PassWord, ProjectId, expInYear);
 					return manager;
 				} else {
-					User employee = new Employee(ID, Fullname, Email, PassWord, ProjectId, ProSkill, Role.EMPLOYEE);
+					User employee = new Employee(ID, Fullname, Email, PassWord, ProjectId, ProSkill);
 					return employee;
 				}
 			} else {
