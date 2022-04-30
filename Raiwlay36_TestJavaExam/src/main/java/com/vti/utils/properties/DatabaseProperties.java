@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class DatabaseProperties {
-	public static final String RESOURCE = "src/main/resource/";
+	public static final String RESOURCE = "C:\\Users\\Admin\\Desktop\\Java\\VTI\\Java\\NgocDolphin\\Raiwlay36_TestJavaExam\\src\\main\\resource\\";
 	
 	private Properties properties;
 	
